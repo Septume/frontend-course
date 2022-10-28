@@ -6,19 +6,19 @@
         <div class="name">
           {{food.name}}
         </div>
-      </div>
-      <span class="favori" {{food.favori?'':'not'}}>
-        ❤
-      </span>
-      <div class="stars">
-        <star-rating
-        [value]="food.stars"
-        [totalstars]="5"
-        checkedcolor="red"
-        uncheckedcolor="black"
-        size="22px"
-        [readonely]="true">
-      </star-rating>
+        <span class="favori" {{food.favori?'':'not'}}>
+          ❤
+        </span>
+        <div class="stars">
+          <star-rating
+          [value]="food.stars"
+          [totalstars]="5"
+          checkedcolor="red"
+          uncheckedcolor="black"
+          size="22px"
+          [readonely]="true">
+          </star-rating>
+        </div>
       </div>
       <div class="product-item-fooder">
         <div class="origins">
