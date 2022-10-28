@@ -1,12 +1,12 @@
 <ul>
   <li *ngFor="let food of foods">
-    <a routerLink="/food/{{food.id}}"">
-      <img [src]="food.imageUrl" [alt]="food.name">
+    <a routerLink="/food/{{food.id}}">
+      <img [src]="food.imageUrl" [alt]="food.nom">
       <div class="content">
         <div class="name">
-          {{food.name}}
+          {{food.nom}}
         </div>
-        <span class="favori" {{food.favori?'':'not'}}>
+        <span class="favori {{food.favori?'':'not'}}">
           ❤
         </span>
         <div class="stars">
@@ -16,11 +16,11 @@
           checkedcolor="red"
           uncheckedcolor="black"
           size="22px"
-          [readonely]="true">
+          [readonly]="true">
           </star-rating>
         </div>
       </div>
-      <div class="product-item-fooder">
+      <div class="product-item-footer">
         <div class="origins">
           <span *ngFor="let origin of food.origins">
             {{origin}}
@@ -30,11 +30,11 @@
           <span>🕒</span>
           {{food.tempsCuisson}}
         </div>
-      </div>
-      <div class="prix">
-        <span>
-          {{food.prix | currency}}
-        </span>
+        <div class="prix">
+          <span>
+            {{food.prix | currency}}
+          </span>
+        </div>
       </div>
     </a>
   </li>
