@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Food } from 'src/app/shared/models/Food';
 import { FoodService } from './../../../services/food.service';
-import { Tag } from './../../../shared/Tag';
+import { Tag } from '../../../shared/models/Tag';
 
 @Component({
   selector: 'app-home',

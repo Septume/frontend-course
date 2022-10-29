@@ -2,7 +2,7 @@ import { sample_foods, sample_tags } from './../../data';
 
 import { Food } from '../shared/models/Food';
 import { Injectable } from '@angular/core';
-import { Tag } from './../shared/Tag';
+import { Tag } from '../shared/models/Tag';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +28,7 @@ export class FoodService {
   getAllTags(): Tag[] {
     return sample_tags
   }
+
 
   getAllFoodsByTag(tag:string): Food[]{
     return tag === "All"?
