@@ -36,4 +36,9 @@ export class FoodService {
     this.getAll().filter(food => food.tags?.includes(tag))
   }
 
+  getFoodById(foodId:string):Food{
+    // find => renvois la valeur du premier élément trouvé
+    return this.getAll().find(food => food.id == foodId) ?? new Food();
+  }
+
 }
