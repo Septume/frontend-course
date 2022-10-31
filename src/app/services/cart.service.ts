@@ -18,7 +18,7 @@ export class CartService {
   addToCart(food: Food): void {
     let cartItem = this.cart.items
     // find => renvois la première valeur de l'élément trouver
-    .find(item => item.food.id === food.id);
+    .find(item => item._food.id === food.id);
     if(cartItem)
     return;
 
@@ -28,21 +28,24 @@ export class CartService {
 
   removeFromCart(foodId: string): void{
     this.cart.items = this.cart.items
-    .filter(item => item.food.id != foodId);
+      .filter(item => item._food.id != foodId);
+    this.setCartToLocalStorage();
   }
 
   changeQuantity(foodId:string, quantity:number){
     let cartItem = this.cart.items
     // find => renvois la première valeur de l'élément trouver
-    .find(item => item.food.id === foodId)
+    .find(item => item._food.id === foodId)
     if(!cartItem) return;
 
     cartItem.quantity = quantity;
-    cartItem.price = quantity * cartItem.food.price;
+    cartItem.price = quantity * cartItem._food.prix;
+    this.setCartToLocalStorage();
   }
 
   clearCart(){
     this.cart = new Cart();
+    this.setCartToLocalStorage();
   }
 
   getCartObservable(): Observable<Cart>{

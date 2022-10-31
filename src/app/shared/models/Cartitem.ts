@@ -2,7 +2,7 @@ import { Food } from "./Food";
 
 export class CartItem{
 
-  constructor(public food:Food) {}
+  constructor(public _food:Food) {}
     quantity:number = 1;
-    price: number = this.food.prix;
+    price: number = this._food.prix;
 }
