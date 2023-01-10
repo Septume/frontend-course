@@ -3,11 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontend": {
+    "ng-pokemon-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
+          "inlineTemplate": true,
+          "inlineStyle": true,
           "skipTests": true
         },
         "@schematics/angular:class": {
@@ -39,18 +40,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frontend",
+            "outputPath": "dist/ng-pokemon-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -91,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "frontend:build:production"
+              "browserTarget": "ng-pokemon-app:build:production"
             },
             "development": {
-              "browserTarget": "frontend:build:development"
+              "browserTarget": "ng-pokemon-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,31 +102,13 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frontend:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "browserTarget": "ng-pokemon-app:build"
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "06b352cc-e281-41b0-85c7-ed80c8fb0e5a"
+    "analytics": "a8cbd90b-e2d8-4c25-b4ff-89d6041a7eb8"
   }
 }
